@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hsl {
+  color: hsl(0, 0%, 52.3%);
+}
+.hsl-dark {
+  color: hsl(0, 0%, 49.4%);
+}
+
+@keyframes slideUpIcon {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpText {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon {
+  animation: slideUpIcon 0.5s ease-in-out;
+}
+
+.hight_light {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 65%, #f4f6c676 15%);
+  display: inline;
+}
+
+.intro_text {
+  animation: slideUpText 0.7s ease-in-out;
+}
+
+.content_bg {
+  background: linear-gradient(to right, rgba(36, 31, 31, 1) 0%, rgba(36, 31, 31, 1) 32%, rgba(74, 71, 70, 1) 100%);
+}
+
+.name::before,
+.name::after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 11px;
+  background-color: #ff7557;
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+}
+
+.name::after {
+  inset: -6px -6px auto auto;
+}
