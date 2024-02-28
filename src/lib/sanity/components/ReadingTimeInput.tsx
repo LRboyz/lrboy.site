@@ -1,7 +1,7 @@
 import { Box, Button, Flex } from '@sanity/ui'
 import React from 'react'
 import ReadingTime from 'reading-time'
-import { type FieldMember, type NumberInputProps, set, useFormBuilder, defineType } from 'sanity'
+import { type FieldMember, type NumberInputProps, set, defineType } from 'sanity'
 
 export const readingTimeType = defineType({
   name: 'readingTime',
@@ -12,7 +12,6 @@ export const readingTimeType = defineType({
     input: ReadingTimeInput
   }
 })
-
 
 type SanityBlock = {
   _type: string
