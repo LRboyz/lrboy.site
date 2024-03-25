@@ -1,5 +1,5 @@
 import { Skeleton } from '@nextui-org/react'
-import PostLayout from '../PostLayout'
+import PostLayout from './PostLayout'
 
 export default function Loading() {
   return (

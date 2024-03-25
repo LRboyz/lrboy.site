@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Navbar } from '@/components/layout/navbar'
 import { Providers } from './Providers'
+import PreLoader from '@/components/motionFrames/PreLoader'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,9 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={cn('relative font-sans antialiased', inter.className)}>
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
-          <div className='flex bg-white dark:bg-dark flex-col min-h-screen h-full w-full bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]'>
+          {/* <PreLoader /> */}
+          <div className='flex bg-white dark:bg-dark flex-col min-h-screen bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]'>
             <Navbar />
-            <main className='max-w-7xl mx-auto flex flex-col w-full h-full'>{children}</main>
+            <main className=''>{children}</main>
           </div>
         </Providers>
       </body>

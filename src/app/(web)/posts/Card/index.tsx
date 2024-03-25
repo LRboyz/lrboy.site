@@ -11,7 +11,10 @@ interface PostCardProps {
 export default function PostCard({ post }: PostCardProps) {
   return (
     <Link href={`/posts/${post._id}`}>
-      <div className='flex px-2 py-2 border border-divider group transition duration-150 bg-white dark:bg-zinc-800/80 dark:hover:bg-zinc-900 dark:border-zinc-800 bg-whiterounded-lg w-full rounded-md cursor-pointer hover:shadow-lg'>
+      <div
+        className='flex px-2 py-2 border border-divider group transition duration-150
+        dark:bg-zinc-800/80 dark:hover:bg-zinc-900 dark:border-zinc-800 bg-white w-full rounded-md cursor-pointer hover:shadow-lg'
+      >
         <div className='relative w-48 h-full hidden lg:block rounded-xl overflow-hidden '>
           <Image
             isZoomed

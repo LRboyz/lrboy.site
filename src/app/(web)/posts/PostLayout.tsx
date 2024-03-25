@@ -1,5 +1,5 @@
 import Nav from './Nav'
-import Sidebar from './Sidebar'
+// import Sidebar from './Sidebar'
 
 interface PostLayoutProps {
   children: React.ReactNode
@@ -7,13 +7,16 @@ interface PostLayoutProps {
   headings?: any[]
 }
 
-export default function PostLayout({ children, isPostDetail = false, headings = [] }: PostLayoutProps) {
+export default function PostLayout({ children }: PostLayoutProps) {
   return (
-    <div className='flex bg-white dark:bg-dark relative justify-between w-full max-w-6xl border-x border-divider gap-4 min-h-screen mx-auto'>
-      <div className='mt-28 flex border-t border-divider w-full'>
+    <div
+      className='flex bg-white dark:bg-dark relative justify-between w-full max-w-4xl
+     border-divider gap-4 min-h-screen mx-auto'
+    >
+      <div className='mt-28 flex w-full'>
         <Nav />
-        <div className='flex-1 border-x border-divider px-4'>{children}</div>
-        <Sidebar isPostDetail={isPostDetail} headings={headings} />
+        <div className='flex-1  px-4'>{children}</div>
+        {/* <Sidebar isPostDetail={isPostDetail} headings={headings} /> */}
       </div>
     </div>
   )

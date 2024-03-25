@@ -1,6 +1,7 @@
 import { getPostById } from '@/queries/post'
-import PostLayout from '../PostLayout'
+// import PostLayout from '../PostLayout'
 import PostDetail from './PostDetail'
+import PostLayout from '../PostLayout'
 
 export interface PostDetailPageProps {
   params: {

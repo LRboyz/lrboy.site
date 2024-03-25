@@ -1,9 +1,10 @@
-import { Suspense } from 'react'
 import PostList from './List'
 import Category from './Category'
 import PostLayout from './PostLayout'
 import CarouselList from '@/components/carousel'
 import { getPostsByCategorySlug, getPosts } from '@/queries/post'
+import { PenIcon } from '@/components/icons/Pen'
+import MotionPost from '@/components/motionFrames/PostMotion'
 
 interface Props {
   searchParams: {
@@ -19,14 +20,19 @@ export default async function PostPage({ searchParams }: Props) {
   return (
     <PostLayout>
       <div className='flex justify-between'>
-        <div className='w-full py-4 px-2 border-b border-divider'>博客</div>
+        <div className='flex items-center gap-2 py-4 px-2'>
+          <PenIcon />
+          <p className='tracking-widest'>文章</p>
+        </div>
       </div>
 
       <div className='my-2'>{category ? <Category category={category} /> : <CarouselList posts={posts} />}</div>
-      <div className='flex flex-col gap-4'>
-        <Suspense fallback={<div className='w-full flex justify-center p-4'>Loading...</div>}>
-          <PostList category={category} />
-        </Suspense>
+      <div className='flex flex-col gap-4 mt-4'>
+        {/* <Suspense fallback={<div className='w-full flex justify-center p-4'>Loading...</div>}> */}
+
+        <PostList category={category} />
+
+        {/* </Suspense> */}
       </div>
     </PostLayout>
   )
