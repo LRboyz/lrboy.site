@@ -4,7 +4,6 @@ import PostLayout from './PostLayout'
 import CarouselList from '@/components/carousel'
 import { getPostsByCategorySlug, getPosts } from '@/queries/post'
 import { PenIcon } from '@/components/icons/Pen'
-import MotionPost from '@/components/motionFrames/PostMotion'
 
 interface Props {
   searchParams: {
@@ -13,7 +12,7 @@ interface Props {
 }
 
 export default async function PostPage({ searchParams }: Props) {
-  const { category } = searchParams
+  const { category = '' } = searchParams
   const fetcher = category ? getPostsByCategorySlug({ category }) : getPosts({})
   const posts = await fetcher
 
@@ -28,11 +27,7 @@ export default async function PostPage({ searchParams }: Props) {
 
       <div className='my-2'>{category ? <Category category={category} /> : <CarouselList posts={posts} />}</div>
       <div className='flex flex-col gap-4 mt-4'>
-        {/* <Suspense fallback={<div className='w-full flex justify-center p-4'>Loading...</div>}> */}
-
         <PostList category={category} />
-
-        {/* </Suspense> */}
       </div>
     </PostLayout>
   )
