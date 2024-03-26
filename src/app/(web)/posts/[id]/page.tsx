@@ -1,7 +1,7 @@
 import { getPostById } from '@/queries/post'
 // import PostLayout from '../PostLayout'
 import PostDetail from './PostDetail'
-import PostLayout from '../PostLayout'
+import { Suspense } from 'react'
 
 export interface PostDetailPageProps {
   params: {
@@ -12,9 +12,5 @@ export interface PostDetailPageProps {
 export default async function PostDetailPage({ params: { id } }: PostDetailPageProps) {
   const post = await getPostById(id)
 
-  return (
-    <PostLayout isPostDetail={id !== undefined} headings={post.headings}>
-      <PostDetail post={post} />
-    </PostLayout>
-  )
+  return <PostDetail post={post} />
 }

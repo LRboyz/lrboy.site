@@ -56,7 +56,7 @@ export function Dock() {
       {MenuItems.map((item, index) => (
         <MenuItem key={index} focused={focused} index={index} setFocusedIndex={setFocusedIndex}>
           <Button isIconOnly onClick={() => onClickMenu(item)} className={cn('rounded-full bg-btn dark:bg-btn-dark')}>
-            {<item.icon className='w-2 hsl dark:hsl-dark' style={{ scale: 2.5 }} />}
+            {<item.icon className='w-6 h-6 hsl dark:hsl-dark' />}
           </Button>
         </MenuItem>
       ))}

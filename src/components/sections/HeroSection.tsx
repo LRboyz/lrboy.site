@@ -2,7 +2,7 @@
 import { Avatar, Button, Tooltip } from '@nextui-org/react'
 import { AnimatedText } from '../animation/AnimatedText'
 import MotionTitle from '../motionFrames/TitleMotion'
-import { ChevronDownCircle } from 'lucide-react'
+import { ChevronDownCircle, ChevronRightCircle } from 'lucide-react'
 import { XIcon } from '../icons/XIcon'
 import { GitHubIcon } from '../icons/GitHubIcon'
 import { TelegramIcon } from '../icons/TelegramIcon'
@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils'
 import { QQIcon } from '../icons/QQIcon'
 import { MailIcon } from '../icons/MailIcon'
 import { Link as ScrollLink } from 'react-scroll'
+import Link from 'next/link'
 
 export default function HeroSection() {
   return (
@@ -50,14 +51,11 @@ export default function HeroSection() {
         </Avatar>
       </div>
       <div className='absolute bottom-10 left-[50%] translate-x-[50%]'>
-        <ScrollLink
-          to='postSection' // 这里的值应该是你想要滚动到的元素的 id 属性值
-          smooth
-          duration={1000}
-          className='z-30'
-        >
-          <ChevronDownCircle className='animate-bounce cursor-pointer text-zinc-400 hover:text-zinc-100' />
-        </ScrollLink>
+        <Tooltip content='前往博客'>
+          <Link href={'/posts'}>
+            <ChevronRightCircle className='animate-bounce cursor-pointer text-zinc-400 hover:text-zinc-100' />
+          </Link>
+        </Tooltip>
       </div>
     </section>
   )

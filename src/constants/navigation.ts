@@ -8,7 +8,7 @@ export type Navigate = {
   title: string
 }
 
-export const navigitions: Navigate[] = [
+export const navigation: Navigate[] = [
   {
     icon: FaReact,
     label: 'Frontend',

@@ -76,7 +76,18 @@ export default function PostDetail({ post }: PostDetailProps) {
       </header>
 
       <div className={cn('prose dark:prose-invert')}>
-        <PostPortableText value={post.body} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{
+            duration: 0.35,
+            type: 'spring',
+            stiffness: 120,
+            damping: 20
+          }}
+        >
+          <PostPortableText value={post.body} />
+        </motion.div>
       </div>
     </article>
   )
