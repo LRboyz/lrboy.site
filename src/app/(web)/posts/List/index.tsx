@@ -3,17 +3,16 @@ import PostCard from '../Card'
 import Empty from '@/components/ui/empty'
 import { Skeleton } from '@nextui-org/react'
 import { cn } from '@/lib/utils'
+import { Post } from '@/lib/sanity/schema/post'
 
 interface PostListProps {
   category?: string
+  posts: Post[]
 }
-export default async function PostList({ category }: PostListProps) {
-  const fetcher = category ? getPostsByCategorySlug({ category }) : getPosts({})
-  const posts = await fetcher
-
+export default function PostList({ category, posts }: PostListProps) {
   return (
     <div
-      className={cn('flex flex-wrap gap-4', {
+      className={cn('flex flex-col gap-4', {
         'justify-around': posts.length > 3
       })}
     >

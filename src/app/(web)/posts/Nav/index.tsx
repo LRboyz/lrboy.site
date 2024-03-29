@@ -4,27 +4,29 @@ import { Navigate, navigation } from '@/constants/navigation'
 import { Home } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { cn } from '@/lib/utils'
 
 interface NavProps {}
 
 export default function Nav({}: NavProps) {
+  const searchParams = useSearchParams()
+  const category = searchParams.get('category')
   return (
     <div className='w-[200px] hidden md:block h-full shadow-md py-2 rounded-md'>
-      <div className='sticky top-10'>
-        <NavItem nav={{ label: 'Home', title: '主页', icon: Home }} href='/posts' />
-        {navigation.map((nav, key) => (
-          <NavItem key={key} nav={nav} />
-        ))}
-      </div>
+      <Suspense fallback={<>Loading...</>}>
+        <div className='sticky top-10'>
+          <NavItem nav={{ label: 'Home', title: '主页', icon: Home }} href='/posts' />
+          {navigation.map((nav, key) => (
+            <NavItem key={key} nav={nav} category={category} />
+          ))}
+        </div>
+      </Suspense>
     </div>
   )
 }
 
-function NavItem({ nav, href }: { nav: Navigate; href?: string }) {
-  const searchParams = useSearchParams()
-  const category = searchParams.get('category')
+function NavItem({ nav, href, category }: { nav: Navigate; category?: string | null; href?: string }) {
   const isActive = nav.label === category
 
   return (

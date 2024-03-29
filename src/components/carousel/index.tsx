@@ -43,7 +43,7 @@ const CarouselSettings: SwiperOptions = {
 
 export default function CarouselList({ posts = [] }: CarouselSliderProps) {
   return (
-    <Swiper {...CarouselSettings} className='overflow-hidden rounded-xl relative'>
+    <Swiper {...CarouselSettings} className='overflow-hidden rounded-xl relative border border-divider'>
       {posts.slice(0, 5).map((slide, index) => (
         <SwiperSlide style={{ ...CarouselStyles }} key={index}>
           <div

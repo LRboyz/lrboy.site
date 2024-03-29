@@ -16,7 +16,7 @@ interface PostDetailProps {
 
 export default function PostDetail({ post }: PostDetailProps) {
   return (
-    <article data-postid={post._id} className='p-4 overflow-hidden'>
+    <article data-postid={post._id} className='p-4 overflow-hidden bg-dark h-full'>
       <header
         className='relative flex flex-col items-center after:absolute after:-bottom-1 after:block 
       after:h-px after:w-full after:rounded after:bg-gradient-to-r after:from-zinc-400/20 after:via-zinc-200/10

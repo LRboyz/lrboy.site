@@ -655,7 +655,7 @@ module.exports = {
         'btn-dark': 'linear-gradient(45deg, hsl(0, 0%, 11%), hsl(0, 0%, 13.6%), hsl(0, 0%, 11%), hsl(0, 0%, 13.6%));'
       },
       backgroundColor: {
-        dark: 'hsl(0,0%,8.5%)'
+        dark: 'hsl(0,0%,12.5%)'
       },
       keyframes: {
         'accordion-down': {

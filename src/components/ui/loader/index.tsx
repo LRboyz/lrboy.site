@@ -3,7 +3,7 @@ import styles from './loader.module.css'
 
 export default function Loader() {
   return (
-    <div className='h-9 flex items-center'>
+    <div className='flex items-center mx-4'>
       <div className={cn(styles.loader)}></div>
     </div>
   )
